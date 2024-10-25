@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2874f0;
+    padding: 15px 20px;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 40%;
+}
+
+.search-bar input {
+    width: 80%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-bar .search-btn {
+    padding: 8px 16px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.navbar-links a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Categories */
+.categories {
+    background-color: white;
+    padding: 15px;
+}
+
+.categories ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.categories ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #2874f0;
+}
+
+.categories ul li a:hover {
+    color: #ff9800;
+}
+
+/* Products Section */
+.products {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 18px;
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+.product-card .add-to-cart {
+    padding: 10px 20px;
+    background-color: #2874f0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product-card .add-to-cart:hover {
+    background-color: #ff9800;
+}
+
+/* Footer */
+footer {
+    background-color: #2874f0;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
+.navFooterVerticalColumn navAccessibility{
+    display: flex;
+}
+</style>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Mykart</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for products, brands and more">
+                <button class="search-btn">Search</button>
+            </div>
+            <div class="navbar-links">
+                <a href="#">Login</a>
+                <a href="#">More</a>
+                <a href="#">Cart <span id="cart-count">0</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Categories -->
+    <section class="categories">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Appliances</a></li>
+            <li><a href="#">Fashion</a></li>
+            <li><a href="#">Mobiles</a></li>
+            <li><a href="#">Beauty</a></li>
+        </ul>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcShbEa7WnFOOMYRLZIdsiR7MB2PTKWREWCA7bP8RAqftvY5sfKg7VEQ8Xq64QZrDoI1Dnq4BHMUQKpukbUxcx3hgF2td9WLmwPYBC7340rVLWEy8BdmxLJPOZzRYBxlTQlW44i8baI&usqp=CAc" alt="Mobile">
+                <h3>Smartphone</h3>
+                <p>15999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTjBVcigI0oZ0GbZqIe4RkUeWPWKIWhOInTx-57RvyEHY7s3J7qAryLTIU_3tL3Z9S_Q13l-Y8saLwZVcRkTyTeaBUeQrq3MQZaMXh8aQpgJzYt6hMvXjLTYNiLksy62v_6duOsvgY&usqp=CAc" alt="Laptop">
+                <h3>Laptop</h3>
+                <p>69999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="data:image/webp;base64,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" alt="Headphones">
+                <h3>Wireless Headphones</h3>
+                <p>4999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="data:image/webp;base64,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" alt="TV">
+                <h3>Smart TV</h3>
+                <p>49999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+            <!-- Categories Section -->
+    <section class="categories">
+        <h2>Categories</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <img src="https://img.freepik.com/free-photo/full-shot-smiley-woman-with-shopping-bags_23-2148238180.jpg?t=st=1729845559~exp=1729849159~hmac=9b9c55fb81cd9270ab794cf218c02d8ef60429a4d94b18929f63ad38164db83e&w=740" alt="Fashion">
+                <h3>Fashion</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://5.imimg.com/data5/ANDROID/Default/2022/2/SJ/HA/AJ/31543065/product-jpeg-500x500.jpeg" alt="Home Appliances">
+                <h3>Home and Kitchen Appliances</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://orchidlifesciences.com/wp-content/uploads/2024/06/01-14-01-1024x704.jpg" alt="Beauty Products">
+                <h3>Beauty Products</h3>
+            </div>
+            <div class="category-card">
+                <img src="https://5.imimg.com/data5/AL/RP/GQ/SELLER-57010916/electronic-products-500x500.jpg" alt="Electronics">
+                <h3>Electronics</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.meesho.com/images/products/74375213/3x3hf_512.webp" alt="Product 1">
+                <h3>Stylish Dress</h3>
+                <p>689</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://getketchadmin.getketch.com/product/8905745177197/660/HLSH013833_1.jpg" alt="Product 2">
+                <h3>Casual Shirt</h3>
+                <p>899</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://infinityphone.in/cdn/shop/files/iPhone_15_Blue_PDP_Image_Position-1__en-IN_1445x_3503fbd9-5b55-4896-92a1-0a04f07d83de_869x949.jpg?v=1698405585" alt="Product 3">
+                <h3>Smartphone</h3>
+                <p>59999</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/414Rm-APz-L._SX300_SY300_QL70_FMwebp_.jpg" alt="Product 4">
+                <h3>Headphones</h3>
+                <p>699</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="navLeftFooter nav-sprite-v1" id="navFooter">
+  
+            <a href="javascript:void(0)" id="navBackToTop" aria-label="Back to top">
+              <div class="navFooterBackToTop">
+              <span class="navFooterBackToTopText">
+                Back to top
+              </span>
+              </div>
+            </a>
+            
+              
+            <div class="navFooterVerticalColumn navAccessibility" role="presentation">
+              <div class="navFooterVerticalRow navAccessibility" style="display: table-row;">
+                    <div class="navFooterLinkCol navAccessibility">
+                      <div class="navFooterColHead" role="heading" aria-level="6">Get to Know Us</div>
+                    <ul>
+                        <li class="nav_first">
+                          <a href="" class="nav_a">About Mykart</a>
+                        </li>
+                        <li>
+                          <a href="" class="nav_a">Careers</a>
+                        </li>
+                        <li>
+                          <a href="" class="nav_a">Press Releases</a>
+                        </li>
+                    </ul>
+                  </div>
+                    <div class="navFooterColSpacerInner navAccessibility"></div>
+                    <div class="navFooterLinkCol navAccessibility">
+                      <div class="navFooterColHead" role="heading" aria-level="6">Connect with Us</div>
+                    <ul>
+                        <li class="nav_first">
+                          <a href="" class="nav_a">Facebook</a>
+                        </li>
+                        <li>
+                          <a href="" class="nav_a">Twitter</a>
+                        </li>
+                        <li class="nav_last ">
+                          <a href="" class="nav_a">Instagram</a>
+                        </li>
+                    </ul>
+                  </div>
+                    <div class="navFooterColSpacerInner navAccessibility"></div>
+                    <div class="navFooterLinkCol navAccessibility">
+                      <div class="navFooterColHead" role="heading" aria-level="6">Make Money with Us</div>
+                    <ul>
+                        <li class="nav_first">
+                          <a href="/b/?node=2838698031&amp;ld=AZINSOANavDesktopFooter_C&amp;ref_=nav_footer_sell_C" class="nav_a">Sell on MyShop</a>
+                        </li>
+                        <li>
+                          <a href="" class="nav_a">Sell under Mykart Accelerator</a>
+                        </li>
+                        <li>
+                          <a href="" class="nav_a">Protect and Build Your Brand</a>
+                        </li>
+                        <li>
+                          <a href="" class="nav_a">India Selling</a>
+                        </li>
+                        <li>
+                          <a href="class="nav_a">Supply to Mykart</a>
+                        </li>
+                        <li>
+                          <a href="" class="nav_a">Become an Affiliate</a>
+                        </li>
+                        <li>
+                          <a href="" class="nav_a">Fulfilment by Mykart</a>
+                        </li>
+                        <li>
+                          <a href="" class="nav_a">Advertise Your Products</a>
+                        </li>
+                    </ul>
+                  </div>
+                    <div class="navFooterColSpacerInner navAccessibility"></div>
+                    <div class="navFooterLinkCol navAccessibility">
+                      <div class="navFooterColHead" role="heading" aria-level="6">Let Us Help You</div>
+                    <ul>
+                        <li class="nav_first">
+                          <a href="/gp/css/homepage.html?ref_=footer_ya" class="nav_a">Your Account</a>
+                        </li>
+                        <li>
+                          <a href="/gp/css/returns/homepage.html?ref_=footer_hy_f_4" class="nav_a">Returns Centre</a>
+                        </li>
+                        <li>
+                          <a href="" class="nav_a">Recalls and Product Safety Alerts</a>
+                        </li>
+                        <li>
+                          <a href="/gp/help/customer/display.html?nodeId=201083470&amp;ref_=footer_swc" class="nav_a">100% Purchase Protection</a>
+                        </li>
+                        <li>
+                          <a href="/gp/browse.html?node=6967393031&amp;ref_=footer_mobapp" class="nav_a">Mykart App Download</a>
+                        </li>
+                        <li class="nav_last ">
+                          <a href="/gp/help/customer/display.html?nodeId=200507590&amp;ref_=footer_gw_m_b_he" class="nav_a">Help</a>
+                        </li>
+                    </ul>
+                  </div>
+              </div>
+            </div>
+            <div class="nav-footer-line"></div>
+            
+              <div class="navFooterLine navFooterLinkLine navFooterPadItemLine">
+                <span>
+                  <div class="navFooterLine navFooterLogoLine">
+                    <a aria-label=  Home" href="/ref=footer_logo">
+                    <div class="nav-logo-base nav-sprite"></div>
+                    </a>
+                  </div>
+            </span>
+                
+                  <span class="icp-container-desktop"><div class="navFooterLine">
+            <style type="text/css">
+              #icp-touch-link-language { display: none; }
+            </style>
+              
+            </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mykart. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for handling the Add to Cart functionality
+let cartCount = 0;
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        cartCount++;
+        document.getElementById('cart-count').innerText = cartCount;
+        alert("Item added to cart!");
+    });
+});
+
+    </script>
+
+</body>
+</html>
